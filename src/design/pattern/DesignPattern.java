@@ -6,7 +6,9 @@
 package design.pattern;
 
 import design.pattern.factorypattern.CarFactory;
+import design.pattern.factorypatternhashmap.CarFactoryHashMap;
 import design.pattern.factorypattern.Car;
+import design.pattern.factorypatternhashmap.CarHashMap;
 
 /**
  *
@@ -19,13 +21,27 @@ public class DesignPattern {
      */
     public static void main(String[] args) {
         
-        CarFactory carFactory = new CarFactory();
-        
-        Car honda = carFactory.getCar("maruti");
-        
-        System.out.println("car price -> "+honda.getPrice());
+        factoryPatternHashMap();
         
     }
+    
+    
+    
+    private static void factoryPattern() {
+        CarFactory carFactory = new CarFactory();
+        Car honda = carFactory.getCar("MARUTI");
+        System.out.println("car price -> "+honda.getPrice());
+    }
+    
+    
+    private static void factoryPatternHashMap() {
+        CarFactoryHashMap carFactory = new CarFactoryHashMap();
+        CarHashMap honda = carFactory.getCar("HONDA");
+        System.out.println("car price -> "+honda.getPrice());
+    }
+    
+    
+   
     
     
 }
