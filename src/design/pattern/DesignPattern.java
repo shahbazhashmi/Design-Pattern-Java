@@ -8,6 +8,7 @@ package design.pattern;
 import design.pattern.factorypattern.CarFactory;
 import design.pattern.factorypatternhashmap.CarFactoryHashMap;
 import design.pattern.factorypattern.Car;
+import design.pattern.factorypatterngenerics.R15;
 import design.pattern.factorypatternhashmap.CarHashMap;
 
 /**
@@ -36,11 +37,10 @@ public class DesignPattern {
     
     private static void factoryPatternHashMap() {
         CarFactoryHashMap carFactory = new CarFactoryHashMap();
-        CarHashMap honda = carFactory.getCar("HONDA");
+        CarHashMap honda = carFactory.getCar("MARUTI");
         System.out.println("car price -> "+honda.getPrice());
     }
-    
-    
+   
    
     
     
