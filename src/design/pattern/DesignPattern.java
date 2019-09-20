@@ -8,6 +8,7 @@ package design.pattern;
 import design.pattern.factorypattern.CarFactory;
 import design.pattern.factorypatternhashmap.CarFactoryHashMap;
 import design.pattern.factorypattern.Car;
+import design.pattern.factorypatterngenerics.GenericBikeFactory;
 import design.pattern.factorypatterngenerics.R15;
 import design.pattern.factorypatternhashmap.CarHashMap;
 
@@ -22,7 +23,14 @@ public class DesignPattern {
      */
     public static void main(String[] args) {
         
-        factoryPatternHashMap();
+        try {
+        
+            factoryPatternGenerics();
+        
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
         
     }
     
@@ -39,6 +47,13 @@ public class DesignPattern {
         CarFactoryHashMap carFactory = new CarFactoryHashMap();
         CarHashMap honda = carFactory.getCar("MARUTI");
         System.out.println("car price -> "+honda.getPrice());
+    }
+    
+    
+    private static void factoryPatternGenerics() throws Exception {
+        GenericBikeFactory<R15> r15Factory = new GenericBikeFactory<R15>(R15.class);
+        R15 r15 = r15Factory.createInstance();
+        System.out.println("R15 cc -> "+r15.getCC());
     }
    
    
