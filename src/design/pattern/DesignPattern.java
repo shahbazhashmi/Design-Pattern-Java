@@ -11,6 +11,7 @@ import design.pattern.factorypattern.Car;
 import design.pattern.factorypatterngenerics.GenericBikeFactory;
 import design.pattern.factorypatterngenerics.R15;
 import design.pattern.factorypatternhashmap.CarHashMap;
+import design.pattern.singletonpattern.BikeSingleton;
 
 /**
  *
@@ -25,7 +26,7 @@ public class DesignPattern {
         
         try {
         
-            factoryPatternGenerics();
+            singletonPattern();
         
         }
         catch(Exception e) {
@@ -56,7 +57,11 @@ public class DesignPattern {
         System.out.println("R15 cc -> "+r15.getCC());
     }
    
-   
+
+    private static void singletonPattern() {
+        BikeSingleton bikeSingleton = BikeSingleton.getInstance();
+        System.out.println("bike singleton name -> "+bikeSingleton.getName());
+    }
     
     
 }
