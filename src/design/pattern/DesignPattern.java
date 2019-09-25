@@ -5,6 +5,7 @@
  */
 package design.pattern;
 
+import design.pattern.builderpattern.Student;
 import design.pattern.factorypattern.CarFactory;
 import design.pattern.factorypatternhashmap.CarFactoryHashMap;
 import design.pattern.factorypattern.Car;
@@ -26,7 +27,7 @@ public class DesignPattern {
         
         try {
         
-            singletonPattern();
+            builderPattern();
         
         }
         catch(Exception e) {
@@ -61,6 +62,12 @@ public class DesignPattern {
     private static void singletonPattern() {
         BikeSingleton bikeSingleton = BikeSingleton.getInstance();
         System.out.println("bike singleton name -> "+bikeSingleton.getName());
+    }
+    
+    
+    private static void builderPattern() {
+        Student s = Student.Builder.getInstance().setAddress("Mumbai").setName("Shahbaz").setMobile("98765544444").build();
+        System.out.println("builder pattern - Student -> "+s.toString());
     }
     
     
